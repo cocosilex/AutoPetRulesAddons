@@ -1,0 +1,8 @@
+{
+	"name": "AutoPetRulesAddons",
+	"creator": "cocosilex",
+	"description": "ChatTriggers Module for displaying pet rules on the screen instead of in chat.",
+	"version": "0.0.1",
+	"entry": "index.js",
+	"requires": ["ChatTriggers", "Vigilance"]
+}
