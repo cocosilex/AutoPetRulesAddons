@@ -1,8 +1,7 @@
 import Settings from '../config.js';
-import { getPetColor, getPetInfo } from '../petRegistry.js';
+import { getPetColor } from '../petRegistry.js';
 
-let title = ' ';
-let text1;
+let autoPetText = '';
 let stopAutoPetDisplay = false;
 
 function getPetDisplayPosition() {
@@ -80,32 +79,28 @@ function createPositionSettingGUI() {
 	return gui;
 }
 
-register('step', () => {
-	if (!Settings.displayAutoPets) return;
-
-	const pos = getPetDisplayPosition();
-	text1 = new Text(title, pos.x, pos.y).setAlign('CENTER').setShadow(true).setScale(getDisplayScale());
-}).setFps(10);
-
 const overlayRegister = register('renderOverlay', () => {
 	if (!Settings.displayAutoPets) return;
-	if (text1) {
-		text1.draw();
+
+	autoPetDisplayedText = new Text(autoPetText, pos.x, pos.y).setAlign('CENTER').setShadow(true).setScale(getDisplayScale());
+
+	if (autoPetDisplayedText) {
+		autoPetDisplayedText.draw();
 	}
 }).unregister();
 
 function displayPet(petName, color) {
 	if (!Settings.displayAutoPets || stopAutoPetDisplay) return;
 
+	autoPetText = `${color}${petName}`;
 	overlayRegister.register();
-	title = `${color}${petName}`;
 
 	const duration = parseInt(Settings.displayDuration) || 1500;
 
 	setTimeout(() => {
-		if (title !== `${color}${petName}`) return;
+		if (autoPetText !== `${color}${petName}`) return;
 		overlayRegister.unregister();
-		title = ' ';
+		autoPetText = '';
 	}, duration);
 }
 
