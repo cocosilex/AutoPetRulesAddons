@@ -81,7 +81,7 @@ function createPositionSettingGUI() {
 
 const overlayRegister = register('renderOverlay', () => {
 	if (!Settings.displayAutoPets) return;
-
+	const pos = getPetDisplayPosition();
 	autoPetDisplayedText = new Text(autoPetText, pos.x, pos.y).setAlign('CENTER').setShadow(true).setScale(getDisplayScale());
 
 	if (autoPetDisplayedText) {
@@ -104,32 +104,17 @@ function displayPet(petName, color) {
 	}, duration);
 }
 
-register('chat', (event) => {
+register('chat', (pet, event) => {
 	if (!Settings.displayAutoPets || stopAutoPetDisplay) return;
-	let petName = null;
 
-	const message = ChatLib.getChatMessage(event);
-	const cleanMessage = ChatLib.removeFormatting(message);
-
-	let match = cleanMessage.match(/Autopet equipped your \[Lvl \d+\] \[(\d+)✦\] (.+?)! VIEW RULE/);
+	const match = pet.match(/\[Lvl \d+\](?:\s\[(\d+)✦\])?\s(.+?)(?:\s✦)?$/);
+	console.log(`Received pet message: ${pet}`);
 	if (match) {
-		petName = match[2].trim();
-	} else {
-		match = cleanMessage.match(/Autopet equipped your \[Lvl \d+\] (.+?) ✦! VIEW RULE/);
-		if (match) {
-			petName = match[1].trim();
-		} else {
-			match = cleanMessage.match(/Autopet equipped your \[Lvl \d+\] (.+?)! VIEW RULE/);
-			if (match) {
-				petName = match[1].trim();
-			}
-		}
-	}
-	if (petName) {
+		const petName = match[2] || match[1];
 		cancel(event);
 		const petColor = getPetColor(petName);
 		displayPet(petName, petColor);
 	}
-}).setCriteria(/Autopet equipped your .+/);
+}).setCriteria('Autopet equipped your ${pet}! VIEW RULE');
 
 export { createPositionSettingGUI };

@@ -1,144 +1,105 @@
 const PetRegistry = {
-	// Mining Pets - Orange/Gold colors
+	// Mining Pets
 	Armadillo: { category: 'Mining', color: '§6' },
 	Bal: { category: 'Mining', color: '§6' },
 	Bat: { category: 'Mining', color: '§6' },
 	Endermite: { category: 'Mining', color: '§6' },
-	'Glacite Golem': { category: 'Mining', color: '§b' }, // Light blue for ice theme
+	'Glacite Golem': { category: 'Mining', color: '§b' },
 	Goblin: { category: 'Mining', color: '§6' },
-	'Mithril Golem': { category: 'Mining', color: '§3' }, // Dark aqua for mithril
+	'Mithril Golem': { category: 'Mining', color: '§3' },
 	Mole: { category: 'Mining', color: '§6' },
-	Rock: { category: 'Mining', color: '§8' }, // Dark gray for rock
+	Rock: { category: 'Mining', color: '§8' },
 	Scatha: { category: 'Mining', color: '§6' },
-	Silverfish: { category: 'Mining', color: '§7' }, // Gray for silverfish
-	'Wither Skeleton': { category: 'Mining', color: '§8' }, // Dark gray
+	Silverfish: { category: 'Mining', color: '§7' },
+	'Wither Skeleton': { category: 'Mining', color: '§8' },
 	Snail: { category: 'Mining', color: '§6' },
 
-	// Combat Pets - Red/Dark Red colors
+	// Combat Pets
 	Ankylosaurus: { category: 'Combat', color: '§c' },
-	'Black Cat': { category: 'Combat', color: '§0' }, // Black for black cat
-	Blaze: { category: 'Combat', color: '§e' }, // Yellow for fire
-	Eerie: { category: 'Combat', color: '§5' }, // Purple for spooky
-	'Ender Dragon': { category: 'Combat', color: '§5' }, // Purple for ender
-	Enderman: { category: 'Combat', color: '§0' }, // Black for enderman
-	Ghoul: { category: 'Combat', color: '§8' }, // Dark gray for undead
-	'Golden Dragon': { category: 'Combat', color: '§6' }, // Gold
-	Golem: { category: 'Combat', color: '§7' }, // Gray for iron
-	'Grandma Wolf': { category: 'Combat', color: '§f' }, // White for grandma
-	Griffin: { category: 'Combat', color: '§e' }, // Yellow for mythical
-	Hound: { category: 'Combat', color: '§4' }, // Dark red
-	Jerry: { category: 'Combat', color: '§a' }, // Green for jerry
-	Kuudra: { category: 'Combat', color: '§4' }, // Dark red for boss
-	'Magma Cube': { category: 'Combat', color: '§c' }, // Red for magma
-	Mammoth: { category: 'Combat', color: '§f' }, // White for mammoth
-	Phoenix: { category: 'Combat', color: '§c' }, // Red for fire bird
-	Pigman: { category: 'Combat', color: '§d' }, // Pink for pigman
-	'Rift Ferret': { category: 'Combat', color: '§5' }, // Purple for rift
-	Skeleton: { category: 'Combat', color: '§f' }, // White for bones
-	'Skeleton Horse': { category: 'Combat', color: '§7' }, // Gray
-	Snowman: { category: 'Combat', color: '§f' }, // White for snow
-	Spider: { category: 'Combat', color: '§8' }, // Dark gray
-	Spirit: { category: 'Combat', color: '§b' }, // Light blue for spirit
-	Tarantula: { category: 'Combat', color: '§8' }, // Dark gray
-	Tiger: { category: 'Combat', color: '§6' }, // Orange for tiger
-	'T-Rex': { category: 'Combat', color: '§a' }, // Green for dinosaur
-	Turtle: { category: 'Combat', color: '§2' }, // Dark green
-	Wolf: { category: 'Combat', color: '§f' }, // White
-	Zombie: { category: 'Combat', color: '§2' }, // Dark green for zombie
+	'Black Cat': { category: 'Combat', color: '§0' },
+	Blaze: { category: 'Combat', color: '§e' },
+	Eerie: { category: 'Combat', color: '§5' },
+	'Ender Dragon': { category: 'Combat', color: '§5' },
+	Enderman: { category: 'Combat', color: '§0' },
+	Ghoul: { category: 'Combat', color: '§8' },
+	'Golden Dragon': { category: 'Combat', color: '§6' },
+	Golem: { category: 'Combat', color: '§7' },
+	'Grandma Wolf': { category: 'Combat', color: '§f' },
+	Griffin: { category: 'Combat', color: '§e' },
+	Hound: { category: 'Combat', color: '§4' },
+	Jerry: { category: 'Combat', color: '§a' },
+	Kuudra: { category: 'Combat', color: '§4' },
+	'Magma Cube': { category: 'Combat', color: '§c' },
+	Mammoth: { category: 'Combat', color: '§f' },
+	Phoenix: { category: 'Combat', color: '§c' },
+	Pigman: { category: 'Combat', color: '§d' },
+	'Rift Ferret': { category: 'Combat', color: '§5' },
+	Skeleton: { category: 'Combat', color: '§f' },
+	'Skeleton Horse': { category: 'Combat', color: '§7' },
+	Snowman: { category: 'Combat', color: '§f' },
+	Spider: { category: 'Combat', color: '§8' },
+	Spirit: { category: 'Combat', color: '§b' },
+	Tarantula: { category: 'Combat', color: '§8' },
+	Tiger: { category: 'Combat', color: '§6' },
+	'T-Rex': { category: 'Combat', color: '§a' },
+	Turtle: { category: 'Combat', color: '§2' },
+	Wolf: { category: 'Combat', color: '§f' },
+	Zombie: { category: 'Combat', color: '§2' },
 
-	// Farming Pets - Green colors
-	Bee: { category: 'Farming', color: '§e' }, // Yellow for bee
-	Chicken: { category: 'Farming', color: '§f' }, // White
-	Elephant: { category: 'Farming', color: '§7' }, // Gray
-	'Mooshroom Cow': { category: 'Farming', color: '§c' }, // Red for mushroom
-	Hedgehog: { category: 'Farming', color: '§6' }, // Orange/brown
-	Pig: { category: 'Farming', color: '§d' }, // Pink
-	Rabbit: { category: 'Farming', color: '§f' }, // White
-	Slug: { category: 'Farming', color: '§a' }, // Green
+	// Farming Pets
+	Bee: { category: 'Farming', color: '§e' },
+	Chicken: { category: 'Farming', color: '§f' },
+	Elephant: { category: 'Farming', color: '§7' },
+	'Mooshroom Cow': { category: 'Farming', color: '§c' },
+	Hedgehog: { category: 'Farming', color: '§6' },
+	Pig: { category: 'Farming', color: '§d' },
+	Rabbit: { category: 'Farming', color: '§f' },
+	Slug: { category: 'Farming', color: '§a' },
 
-	// Foraging Pets - Dark Green colors
-	Ocelot: { category: 'Foraging', color: '§e' }, // Yellow for jungle cat
-	Giraffe: { category: 'Foraging', color: '§e' }, // Yellow
-	Lion: { category: 'Foraging', color: '§6' }, // Orange/gold
-	Monkey: { category: 'Foraging', color: '§6' }, // Orange/brown
+	// Foraging Pets
+	Ocelot: { category: 'Foraging', color: '§e' },
+	Giraffe: { category: 'Foraging', color: '§e' },
+	Lion: { category: 'Foraging', color: '§6' },
+	Monkey: { category: 'Foraging', color: '§6' },
 
-	// Fishing Pets - Blue/Aqua colors
-	Ammonite: { category: 'Fishing', color: '§b' }, // Light blue
-	'Baby Yeti': { category: 'Fishing', color: '§f' }, // White for snow
-	'Blue Whale': { category: 'Fishing', color: '§9' }, // Blue
-	Dolphin: { category: 'Fishing', color: '§b' }, // Light blue
-	'Flying Fish': { category: 'Fishing', color: '§3' }, // Dark aqua
-	Megalodon: { category: 'Fishing', color: '§8' }, // Dark gray for shark
-	Penguin: { category: 'Fishing', color: '§0' }, // Black and white
-	Reindeer: { category: 'Fishing', color: '§6' }, // Orange/brown
-	Spinosaurus: { category: 'Fishing', color: '§2' }, // Dark green
-	Squid: { category: 'Fishing', color: '§1' }, // Dark blue
-	'Hermit Crab': { category: 'Fishing', color: '§c' }, // Red
+	// Fishing Pets
+	Ammonite: { category: 'Fishing', color: '§b' },
+	'Baby Yeti': { category: 'Fishing', color: '§f' },
+	'Blue Whale': { category: 'Fishing', color: '§9' },
+	Dolphin: { category: 'Fishing', color: '§b' },
+	'Flying Fish': { category: 'Fishing', color: '§3' },
+	Megalodon: { category: 'Fishing', color: '§8' },
+	Penguin: { category: 'Fishing', color: '§0' },
+	Reindeer: { category: 'Fishing', color: '§6' },
+	Spinosaurus: { category: 'Fishing', color: '§2' },
+	Squid: { category: 'Fishing', color: '§1' },
+	'Hermit Crab': { category: 'Fishing', color: '§c' },
 
-	// Enchanting Pet - Purple color
-	Guardian: { category: 'Enchanting', color: '§5' }, // Purple
+	// Enchanting Pet
+	Guardian: { category: 'Enchanting', color: '§5' },
 
-	// Alchemy Pets - Purple/Pink colors
-	Jellyfish: { category: 'Alchemy', color: '§d' }, // Pink
-	Parrot: { category: 'Alchemy', color: '§a' }, // Green
-	Sheep: { category: 'Alchemy', color: '§f' }, // White
+	// Alchemy Pets
+	Jellyfish: { category: 'Alchemy', color: '§d' },
+	Parrot: { category: 'Alchemy', color: '§a' },
+	Sheep: { category: 'Alchemy', color: '§f' },
 
-	// Taming Pet - Light Purple
-	Owl: { category: 'Taming', color: '§6' }, // Orange/brown
+	// Taming Pet
+	Owl: { category: 'Taming', color: '§6' },
 
-	// Other Pets - Mixed colors
-	Bingo: { category: 'Other', color: '§e' }, // Yellow
-	Montezuma: { category: 'Other', color: '§6' }, // Gold
-	Wisp: { category: 'Other', color: '§b' }, // Light blue for spirit
+	// Other Pets
+	Bingo: { category: 'Other', color: '§e' },
+	Montezuma: { category: 'Other', color: '§6' },
+	Wisp: { category: 'Other', color: '§b' },
 };
 
-// Category color mapping for fallback
-const CategoryColors = {
-	Mining: '§6', // Gold/Orange
-	Combat: '§c', // Red
-	Farming: '§a', // Green
-	Foraging: '§2', // Dark Green
-	Fishing: '§b', // Light Blue
-	Enchanting: '§5', // Purple
-	Alchemy: '§d', // Pink
-	Taming: '§e', // Yellow
-	Other: '§f', // White
-};
-
-function getPetInfo(petName) {
+function getPetColor(petName) {
 	const normalizedName = petName.trim();
 
 	if (PetRegistry[normalizedName]) {
-		return PetRegistry[normalizedName];
+		return PetRegistry[normalizedName].color;
+	} else {
+		return '§f';
 	}
-
-	const lowerName = normalizedName.toLowerCase();
-	for (const [registeredName, info] of Object.entries(PetRegistry)) {
-		if (registeredName.toLowerCase() === lowerName) {
-			return info;
-		}
-	}
-
-	return {
-		category: 'Unknown',
-		color: '§f',
-	};
 }
 
-function getPetColor(petName) {
-	return getPetInfo(petName).color;
-}
-
-function getPetCategory(petName) {
-	return getPetInfo(petName).category;
-}
-
-function getPetsByCategory(category) {
-	return Object.keys(PetRegistry).filter((petName) => PetRegistry[petName].category === category);
-}
-
-function getCategoryColor(category) {
-	return CategoryColors[category] || '§f';
-}
-
-export { PetRegistry, CategoryColors, getPetInfo, getPetColor, getPetCategory, getPetsByCategory, getCategoryColor };
+export { getPetColor };
