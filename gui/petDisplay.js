@@ -108,7 +108,6 @@ register('chat', (pet, event) => {
 	if (!Settings.displayAutoPets || stopAutoPetDisplay) return;
 
 	const match = pet.match(/\[Lvl \d+\](?:\s\[(\d+)✦\])?\s(.+?)(?:\s✦)?$/);
-	console.log(`Received pet message: ${pet}`);
 	if (match) {
 		const petName = match[2] || match[1];
 		cancel(event);

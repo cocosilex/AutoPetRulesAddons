@@ -2,9 +2,6 @@ import { registerCommand } from '../commandManager.js';
 
 registerCommand({
 	aliases: ['help', 'h'],
-	description: 'Display all available commands',
-	category: 'general',
-	showInHelp: true,
 	execute: () => {
 		ChatLib.chat('§6§l[APR] §fCommands:');
 		ChatLib.chat('§e/apr help [category] §f- Display help for a category');
